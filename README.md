@@ -48,7 +48,7 @@ update accountList;
    - This helps with readability and quality control
 5. One trigger per object 
    - Can’t guarantee which one runs first if not
-6. Never commit commented, obsolete code ***in a final commit -- this branch is done and ready for merge.***  Retaining commented code during development is acceptable for reference or convenience, but purge it before a final commit.
+6. Never commit commented, obsolete code **in a final commit -- this branch is done and ready for merge.**  Retaining commented code during development is acceptable for reference or convenience, but purge it before a final commit.
    - Commenting out code goes against the very reason version control exists; it will still be available by looking at the history
 
 ## (PERSONAL BEST PRACTICES - DISCUSSION COMING LATER)
