@@ -1,7 +1,7 @@
 # Developer Best Practices (Draft)
 
 ## What is this?
-A central place to discuss and establish some best practices. I think one of the biggest hurdles when deciding best practices is getting an overall consensus. Another major hurdle is the sheer number of best practices that each developer could suggest. We want the best practice document to be small/concise enough for a new developer to consume without feeling overwhelmed. 
+A central place to discuss and establish some best practices. I think one of the biggest hurdles when deciding best practices is getting an overall consensus. Another major hurdle is the sheer number of best practices that each developer could suggest. We want the best practice document to be small/concise enough for a new developer to consume without feeling overwhelmed, and to finally establish a couple best practices iteratively rather than dumping a ton on everyone at one time.
 
 ## What is the process?
 Using Github's native features we can vote on things, discuss them in comments, manage pull requests for better suggestions, etc.
@@ -63,18 +63,17 @@ update accountList;
   - Spend some time picking your function, class, and variable names 
   - Favor longer and more descriptive names when in doubt 
 - Use JavaDocs to document public (not private) methods and also at the top of your class/trigger 
-  - Ex: 
 
-(IMG)
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 - Use comments sparingly 
   - A good name can take the place of a comment in most cases: 
 
-(IMG)
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-Vs. 
+vs. 
 
-(IMG)
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 - Clean code is something that needs to be a priority and thought about in all design and implementation decisions 
   - What makes a good developer is not writing clever code, but it’s making code that other developers can read - making easily readable code is a skill that must be learned and practiced. It isn’t taught in colleges (to my knowledge) but can be learned via someone like Robert C. Martin. Check out the following book: https://www.oreilly.com/library/view/clean-code/9780136083238/  
@@ -93,16 +92,9 @@ Vs.
 - Test class name format should be NameOfClassYouAreTestingTest 
 - Each class should be covered at least 90% (75% is the minimum Salesforce requires, but this gives us a bunch of breathing room and ensures all but the most forced scenarios are accounted for) 
 - Formatting SOQL. I prefer the following SOQL format: 
-
-(IMG)
-  
   - [ and ]; are on their own separate lines
-  - The keywords are tabbed out one more time to keep them all in the same column 
-  - I’ve seen some people use a variation of this where they do something like this: 
-
-(IMG)
-
-  - I think this can get really ugly if there are a bunch of fields, but I understand why they do it (to easily see the fields that are referenced) and thereby making it easier to add new ones 
+  - The keywords are tabbed out one more time to keep them all in the same column
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 ## TODO
 
