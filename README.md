@@ -8,24 +8,51 @@ Using Github's native features we can vote on things, discuss them in comments, 
 
 ## (DISCUSSION STARTED - PLEASE VOTE ON THE FOLLOWING, ADD COMMENTS, MAKE SUGGESTIONS, MAKE PULL REQUESTS, ETC.)
 
-- Recommended development environment: WebStorm w/ Illuminated Cloud
-  - Licenses are provided for both
-  - You are free to use a different IDE/editor as long as it doesn't interfere with the repository's you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
-    - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses 
-- No SOQLs in for loops, you must bulkify!
+1. Recommended development environment: WebStorm w/ Illuminated Cloud
+   - Licenses are provided for both
+   - You are free to use a different IDE/editor as long as it doesn't interfere with the repository's you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
+     - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
+2. No SOQLs/DMLs in for loops, you must bulkify!
 ```
+// 10 SOQLs/ 10 DMLs
 for(Integer i = 0; i < 10; i++){
 	Account a = [SELECT Id, Name FROM Account LIMIT 10];
 	a.Name = 'Account' + i;
 	update a;
 }
 ```
-- Use tabs instead of spaces 
-  - Character counts and aesthetics 
-- One trigger per object 
-  - Can’t guarantee which one runs first if not
+vs.
+```
+// 1 DML / 1 SOQL
+List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 10];
+for(Integer i = 0; i < 10; i++){
+	accountList[i].Name = 'Account' + i;
+}
+update accountList;
+```
+3. Use tabs instead of spaces 
+   - Salesforce has a maximum of 3 MB allowed for code
+     - This means a total maximum of 3,000,000 characters can be used in an org
+   - Some code/characters are NOT counted against that limit:
+     - Test classes and test methods
+     - Managed package code is not included in your total
+   - What IS counted?
+     - Spaces before a line begins
+     - Spaces and tabs input on their own lines with no code around them
+     - Indents; 4 spaces / 4 characters vs 1 tab / 1 character
+   - It's important to note that editing a file directly in Salesforce either via the developer console or the standard UI will convert all tabs to spaces. With larger classes this can increase your character usage by a significant amount if you're not careful.
+   - Some will argue that a properly designed and coded org should never approach this limit, but it's not unheard of that orgs in the past have had to increase this limit: https://releasenotes.docs.salesforce.com/en-us/summer18/release-notes/rn_apex_code_size_limit.htm
+   - The biggest point to take away from this is consistency
+4. Consistency is key
+   - Whatever best practices are decided need to be proliferated through all new code and when possible to our old code
+   - This helps with readability and quality control
+5. One trigger per object 
+   - Can’t guarantee which one runs first if not
+6. Never comment out old code and submit that to version control (commenting out code while during development is fine)
+   - Commenting out code goes against the very reason version control exists; it will still be available by looking at the history
 
 ## (PERSONAL BEST PRACTICES - DISCUSSION COMING LATER)
+### These are some of my personal best practices I wrote up awhile ago. Most will probably not be voted on or make it into the final document but feel free to comment on any of them or suggest changes.
 
 - Prefixes before class names are sometimes a good thing 
   - Usually only in environments where multiple separate feature projects are working in the same code base 
@@ -51,9 +78,6 @@ Vs.
 
 - Clean code is something that needs to be a priority and thought about in all design and implementation decisions 
   - What makes a good developer is not writing clever code, but it’s making code that other developers can read - making easily readable code is a skill that must be learned and practiced. It isn’t taught in colleges (to my knowledge) but can be learned via someone like Robert C. Martin. Check out the following book: https://www.oreilly.com/library/view/clean-code/9780136083238/  
-- Never comment out old code and submit that to version control
-  - Commenting out code goes against the very reason version control exists 
-  - It will still be available by looking at past commits 
 - Keep comments updated 
   - If a comment above a regex says ‘// grab only alphanumeric characters’ and then you change the regex to include or exclude other characters then you need to update the comment so that future readers are not surprised, confused, or mislead 
 - Test methods should follow this format: testMethodThatYouAreTesting_StateBeforeTestAndWhatIsBeingSetup_ExpectedResult 
