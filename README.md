@@ -64,7 +64,7 @@ update accountList;
   - Favor longer and more descriptive names when in doubt 
 - Use JavaDocs to document public (not private) methods and also at the top of your class/trigger 
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/InternationalTradeAdministration/developer-best-practices/blob/master/images/java_doc_example.PNG "JavaDoc example")
 
 - Use comments sparingly 
   - A good name can take the place of a comment in most cases: 
