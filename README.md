@@ -11,7 +11,10 @@
   - We'd like this document to be relatively short in that a new developer can open this up and quickly see what we expect when they write code, and if they want more information it can be provided via further linking of separate documents
 
 ## Established Best Practices
-1. None - at this time
+
+- Use tabs instead of spaces 
+  - Salesforce has a maximum of 3 MB allowed for code
+    - This means a total maximum of 3,000,000 characters can be used in an org
 
 ## TODO (best practices that are not approved yet)
 
@@ -38,10 +41,6 @@ for(Integer i = 0; i < 10; i++){
 }
 update accountList;
 ```
-
-- Use tabs instead of spaces 
-  - Salesforce has a maximum of 3 MB allowed for code
-    - This means a total maximum of 3,000,000 characters can be used in an org
 
   - Some code/characters are NOT counted against that limit:
     - Test classes and test methods
