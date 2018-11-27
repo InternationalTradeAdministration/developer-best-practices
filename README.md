@@ -5,7 +5,7 @@
 - *Use tabs* instead of spaces (Apex, HTML, Triggers, Lightning, etc. - does not apply to .xml files)
   - [Why?](../master/more_info/tabs.md)
 
-- Recommended development environment: WebStorm w/ Illuminated Cloud
+- Team standard development environment: WebStorm w/ Illuminated Cloud
   - Licenses are provided for both
   - You are free to use a different IDE/editor as long as it doesn't interfere with the repository's you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
     - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
