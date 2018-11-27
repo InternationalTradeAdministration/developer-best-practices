@@ -1,19 +1,22 @@
-# Developer Best Practices (Draft)
-
-## What is this?
-- A repo dedicated to voting on best practices that will be encouraged and (in some cases) enforced on new code and old code (when the opportunity arises).
-
-## What is the process?
-- Voting will occur in Pull Requests on certain potentially 'controversial' items. Controversial meaning items that would/could merit debate.
-  - If you would like to create a pull request then please create a branch off of 'master' and initate pull requests from your branch
-  - If you do not have the appropriate permissions to do something, please let Christian Coleman or Mike Griswold know
-- Larger, more abstract concepts like structuring or new pages with extreme detail can be addressed in Issues
-  - We'd like this document to be relatively short in that a new developer can open this up and quickly see what we expect when they write code, and if they want more information it can be provided via further linking of separate documents
+# Developer Best Practices
 
 ## Established Best Practices
 
 - *Use tabs* instead of spaces (Apex, HTML, Triggers, Lightning, etc. - does not apply to .xml files)
-  - [Why?](../master/more_info/TABS_vs_SPACES.md)
+  - [Why?](../master/more_info/tabs.md)
+
+## What is this?
+
+- A repo dedicated to voting on best practices that will be encouraged and (in some cases) enforced on new code and old code (when the opportunity arises).
+
+## What is the process?
+
+- Voting will occur in Slack. There will be roughly two days for everyone in the channel to vote.
+  - To initiate a vote in Slack, enter the following: `/poll "Which do you prefer for code indentation?" "Tabs" "Spaces"`
+  - If you would like to create a pull request then please create a branch off of 'master' and initate pull requests from your branch
+    - If you do not have the appropriate permissions to do something, please let Christian Coleman or Mike Griswold know
+- Larger, more abstract concepts like structuring or new pages with extreme detail can be addressed in Issues
+  - We'd like this document to be relatively short in that a new developer can open this up and quickly see what we expect when they write code, and if they want more information it can be provided via further linking of separate documents
 
 ## TODO (best practices that are not approved yet)
 
