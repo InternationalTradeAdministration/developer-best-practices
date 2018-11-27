@@ -13,16 +13,20 @@
 ## Established Best Practices
 
 - *Use tabs* instead of spaces (Apex, HTML, Triggers, Lightning, etc. - does not apply to .xml files)
-  - [Why?](../more_info/TABS_vs_SPACES.md)
+  - [Why?](../master/more_info/TABS_vs_SPACES.md)
 
 ## TODO (best practices that are not approved yet)
 
 - Recommended development environment: WebStorm w/ Illuminated Cloud
   - Licenses are provided for both
   - You are free to use a different IDE/editor as long as it doesn't interfere with the repository's you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
-     - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
+    - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
 
 - No SOQLs/DMLs in for loops, you must bulkify!
+
+- One trigger per object 
+  - Can’t guarantee which one runs first if not
+
 ```java
 // 10 SOQLs/ 10 DMLs
 for(Integer i = 0; i < 10; i++){
