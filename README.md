@@ -5,10 +5,11 @@
 - *Use tabs* instead of spaces (Apex, HTML, Triggers, Lightning, etc. - does not apply to .xml files)
   - [Why?](../master/more_info/tabs.md)
 
-- Team standard development environment: WebStorm w/ Illuminated Cloud
+- Team standard Salesforce development environment: WebStorm w/ Illuminated Cloud
   - Licenses are provided for both
   - You are free to use a different IDE/editor as long as it doesn't interfere with the repository's you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
     - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
+  - Does not apply to git. Use whatever git client you feel most comfortable with.
 
 - You should always bulkify your code and be aware of your governor usage
   - You might find yourself in a situation that requires you to go against this practice. If you think you've found such a situation, please point it out during a code review.
