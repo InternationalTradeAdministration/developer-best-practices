@@ -10,11 +10,8 @@
   - You are free to use a different IDE/editor as long as it doesn't interfere with the repository's you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
     - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
 
-- No SOQLs/DMLs in for loops, you must bulkify!
-
-- One trigger per object 
-  - Can’t guarantee which one runs first if not
-
+- You should always bulkify your code and be aware of your governor usage
+  - You might find yourself in a situation that requires you to go against this practice. If you think you've found such a situation, please point it out during a code review.
 ```java
 // 10 SOQLs/ 10 DMLs
 for(Integer i = 0; i < 10; i++){
@@ -32,6 +29,9 @@ for(Integer i = 0; i < 10; i++){
 }
 update accountList;
 ```
+
+- One trigger per object 
+  - Can’t guarantee which one runs first if not
 
 ## What is this?
 
