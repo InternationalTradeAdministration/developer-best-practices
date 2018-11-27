@@ -23,7 +23,7 @@ for(Integer i = 0; i < 10; i++){
 ```
 vs.
 ```java
-// 1 DML / 1 SOQL
+// 1 SOQL / 1 DML
 List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 10];
 for(Integer i = 0; i < 10; i++){
   accountList[i].Name = 'Account' + i;
