@@ -12,7 +12,7 @@
 
 ## Established Best Practices
 
-- *Use tabs* instead of spaces (Apex, HTML, Triggers, Lightning, etc. - does not apply to .xml files) - [Why?](../more_info_TABS_vs_SPACES.md)
+- *Use tabs* instead of spaces (Apex, HTML, Triggers, Lightning, etc. - does not apply to .xml files) - [Why?](../more_info/TABS_vs_SPACES.md)
 
 ## TODO (best practices that are not approved yet)
 
