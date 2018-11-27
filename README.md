@@ -49,34 +49,6 @@ update accountList;
 
 ## TODO (best practices that are not approved yet)
 
-- Recommended development environment: WebStorm w/ Illuminated Cloud
-  - Licenses are provided for both
-  - You are free to use a different IDE/editor as long as it doesn't interfere with the repository's you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
-    - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
-
-- No SOQLs/DMLs in for loops, you must bulkify!
-
-- One trigger per object 
-  - Can’t guarantee which one runs first if not
-
-```java
-// 10 SOQLs/ 10 DMLs
-for(Integer i = 0; i < 10; i++){
-  Account a = [SELECT Id, Name FROM Account LIMIT 10];
-  a.Name = 'Account' + i;
-  update a;
-}
-```
-vs.
-```java
-// 1 DML / 1 SOQL
-List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 10];
-for(Integer i = 0; i < 10; i++){
-  accountList[i].Name = 'Account' + i;
-}
-update accountList;
-```
-
 - Consistency is key
   - Whatever best practices are decided need to be proliferated through all new code and when possible to our old code
   - This helps with readability and quality control
