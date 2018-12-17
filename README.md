@@ -5,6 +5,37 @@
 - *Use tabs* instead of spaces (Apex, HTML, Triggers, Lightning, etc. - does not apply to .xml files)
   - [Why?](../master/more_info/tabs.md)
 
+- Team standard Salesforce development environment: WebStorm w/ Illuminated Cloud
+  - Licenses are provided for both
+  - You are free to use a different IDE/editor as long as it doesn't interfere with the repositories you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
+    - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
+  - Does not apply to git. Use whatever git client you feel most comfortable with.
+    - However, WebStorm has an included git client should be sufficient for anyone's needs.
+
+- You should always bulkify your code and be aware of your governor usage
+  - You might find yourself in a situation that makes it difficult to completely avoid queries/DMLs nested in a loop. If you think you've found such a situation, please point it out during a code review.
+```java
+// 10 SOQLs/ 10 DMLs
+for(Integer i = 0; i < 10; i++){
+  Account a = [SELECT Id, Name FROM Account LIMIT 10];
+  a.Name = 'Account' + i;
+  update a;
+}
+```
+vs.
+```java
+// 1 SOQL / 1 DML
+List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 10];
+for(Integer i = 0; i < 10; i++){
+  accountList[i].Name = 'Account' + i;
+}
+update accountList;
+```
+
+- One trigger per object ([Salesforce recommended](https://developer.salesforce.com/blogs/developer-relations/2011/04/apex-trigger-tip-using-a-class-per-object-to-control-logic.html))
+  - The reason for this is control the order of execution. When there are multiple triggers you can not guarantee which trigger will run first.
+  - Having all of an object's trigger logic originating from one place allows it to be read and updated more efficiently.
+
 ## What is this?
 
 - A repo dedicated to voting on best practices that will be encouraged and (in some cases) enforced on new code and old code (when the opportunity arises).
@@ -19,34 +50,6 @@
   - We'd like this document to be relatively short in that a new developer can open this up and quickly see what we expect when they write code, and if they want more information it can be provided via further linking of separate documents
 
 ## TODO (best practices that are not approved yet)
-
-- Recommended development environment: WebStorm w/ Illuminated Cloud
-  - Licenses are provided for both
-  - You are free to use a different IDE/editor as long as it doesn't interfere with the repository's you contribute to, e.g. add extra/unwanted spaces, are able to modify the metadata you need to work on, etc.
-    - Many people prefer to use Intellij w/ Illuminated Cloud but the company doesn't supply licenses for Intellij at this time
-
-- No SOQLs/DMLs in for loops, you must bulkify!
-
-- One trigger per object 
-  - Can’t guarantee which one runs first if not
-
-```java
-// 10 SOQLs/ 10 DMLs
-for(Integer i = 0; i < 10; i++){
-  Account a = [SELECT Id, Name FROM Account LIMIT 10];
-  a.Name = 'Account' + i;
-  update a;
-}
-```
-vs.
-```java
-// 1 DML / 1 SOQL
-List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 10];
-for(Integer i = 0; i < 10; i++){
-  accountList[i].Name = 'Account' + i;
-}
-update accountList;
-```
 
 - Consistency is key
   - Whatever best practices are decided need to be proliferated through all new code and when possible to our old code
