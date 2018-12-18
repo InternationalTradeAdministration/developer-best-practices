@@ -36,6 +36,9 @@ update accountList;
   - The reason for this is control the order of execution. When there are multiple triggers you can not guarantee which trigger will run first.
   - Having all of an object's trigger logic originating from one place allows it to be read and updated more efficiently.
 
+- Never commit commented or obsolete code **in a final commit -- this branch is done and ready for merge.**  Retaining commented code during development is acceptable for reference or convenience, but purge it before a final commit.
+  - Commenting out code goes against the very reason version control exists; it will still be available by looking at the history
+
 ## What is this?
 
 - A repo dedicated to voting on best practices that will be encouraged and (in some cases) enforced on new code and old code (when the opportunity arises).
