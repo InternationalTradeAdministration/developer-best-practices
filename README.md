@@ -1,6 +1,8 @@
-# Developer Best Practices
+# Salesforce Developer Standards
 
-## Established Best Practices
+This repository is intended to provide authoritative guidance for Salesforce developers building and maintaining customizations in ITA's Salesforce environments. It is intended to promote consistency, quality, and maintainability of the Salesforce code base at ITA, and should be understood and adhered to by anyone writing code that will be deployed to ITA's Salesforce environments. These standards were started after Salesforce had been in production use at ITA for over 4 years, so there is a significant backlog of technical and functional debt in the ITA's environments that will take a long time to refactor to adhere to these standards, but every opportunity to do so should be taken as quickly as possible. If you have an addition or change to propose for these standards, see the [What is the process?](#what-is-the-process) section below.
+
+## Established Standards & Conventions
 
 - *Use tabs* instead of spaces (Apex, HTML, Triggers, Lightning, etc. - does not apply to .xml files)
   - [Why?](../master/more_info/tabs.md)
@@ -38,7 +40,7 @@ update accountList;
 
 ## What is this?
 
-- A repo dedicated to voting on best practices that will be encouraged and (in some cases) enforced on new code and old code (when the opportunity arises).
+- A repo dedicated to voting on standards that will be encouraged and (in some cases) enforced on new code and old code (when the opportunity arises).
 
 ## What is the process?
 
