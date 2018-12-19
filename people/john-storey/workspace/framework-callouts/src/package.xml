@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>core_BaseCallout</members>
+        <members>core_BaseGETCallout</members>
+        <members>core_BasePOSTCallout</members>
+        <members>core_HttpRequestFactory</members>
+        <members>core_ICalloutAuthorizationable</members>
+        <members>core_IDomain</members>
+        <members>core_KeyValueHeaderCalloutAuth</members>
+        <members>core_KeyValueParameterCalloutAuth</members>
+        <members>core_NamedCredentialCalloutAuth</members>
+        <name>ApexClass</name>
+    </types>
+    <version>43.0</version>
+</Package>

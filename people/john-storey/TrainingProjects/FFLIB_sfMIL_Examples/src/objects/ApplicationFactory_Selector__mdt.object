@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Correlates a SObject with the related selector class.</description>
+    <fields>
+        <fullName>SObjectType__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Specifies the selector&apos;s related SObject Type.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Specifies the selector&apos;s related SObject Type.</inlineHelpText>
+        <label>SObjectType</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SelectorClass__c</fullName>
+        <description>The Apex class to be instantiated.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The Apex class to be instantiated.</inlineHelpText>
+        <label>Selector Class</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Application Factory - Selector</label>
+    <pluralLabel>Application Factory - Selectors</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

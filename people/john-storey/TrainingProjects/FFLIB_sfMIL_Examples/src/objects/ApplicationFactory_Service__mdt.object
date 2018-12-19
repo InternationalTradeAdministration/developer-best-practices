@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Correlates a SObject with the related service implementation class.</description>
+    <fields>
+        <fullName>SObjectType__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Specifies the service&apos;s related SObject Type.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Specifies the service&apos;s related SObject Type.</inlineHelpText>
+        <label>SObject Type</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceImplementationClass__c</fullName>
+        <description>The Apex class to be instantiated.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The Apex class to be instantiated.</inlineHelpText>
+        <label>Service Implementation Class</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Application Factory - Service</label>
+    <pluralLabel>Application Factory - Services</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

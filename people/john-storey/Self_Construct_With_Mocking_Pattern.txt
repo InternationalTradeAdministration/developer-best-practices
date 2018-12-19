@@ -1,0 +1,63 @@
+Self Construct with Mocking Pattern
+
+// ----------------------------------------------------
+public interface IFoo
+{
+  String getRandomString();
+}
+
+// ----------------------------------------------------
+public class Foo
+  implements IFoo
+{
+  public String getRandomString()
+  {
+    // An unpredictable result
+    return EncodingUtil.ConvertTohex(Crypto.GenerateAESKey(128));
+  }
+
+  private static IFoo mock_instance = null;
+
+  public static IFoo newInstance()
+  {
+    if (mock_instance != null) return mock_instance;
+    return new Foo();
+  }
+
+  @TestVisible
+  private static void setMock(IFoo mock)
+  {
+    mock_instance = mock;
+  }
+}
+
+// ----------------------------------------------------
+public class ClassThatUsesFoo
+{
+  public static String whatDoesFooSay()
+  {
+    return Foo.newInstance().getRandomString();
+  }
+}
+
+// ----------------------------------------------------
+@isTest
+private class ClassThatUsesFoo_Test
+{
+  @isTest
+  static void test()
+  {
+    IFoo f = new mockFoo();
+    Foo.setMock(f);
+    System.assertEquals(f.getRandomString(), ClassThatUsesFoo.whatDoesFooSay());
+  }
+
+  private class mockFoo
+    implements IFoo
+  {
+    public String getRandomString()
+    {
+      return 'Hello world';
+    }
+  }
+}

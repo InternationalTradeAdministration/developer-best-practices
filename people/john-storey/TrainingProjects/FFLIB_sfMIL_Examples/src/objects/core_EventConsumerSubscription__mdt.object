@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Consumer__c</fullName>
+        <description>Specifies the Apex class, implementing the core_IEventsConsumer interface, that will process the event.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Specifies the Apex class, implementing the core_IEventsConsumer interface, that will process the event.</inlineHelpText>
+        <label>Consumer</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventBus__c</fullName>
+        <description>Specifies the broad realm of events the Subscriber wants to receive.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Specifies the broad realm of events the Subscriber wants to receive.</inlineHelpText>
+        <label>Event Bus</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventCategory__c</fullName>
+        <description>Categories from which the subscriber wants events.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Categories from which the subscriber wants events.</inlineHelpText>
+        <label>Event Category</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventName__c</fullName>
+        <description>Unique name for the event.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Unique name for the event.</inlineHelpText>
+        <label>Event Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>When checked (true), the distributor sends matching events to the subscriber.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>When checked (true), the distributor sends matching events to the subscriber.</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MatcherRule__c</fullName>
+        <description>Instructs the Distributor the manner in which an event should be matched to the Subscriber.
+
+Current matcher rules:
+    MatchPlatformEventBusAndCategoryAndEventName
+    MatchPlatformEventBusAndCategory
+    MatchPlatformEventBusAndEventName
+    MatchPlatformEventBus</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Instructs the Distributor the manner in which an event should be matched to the Subscriber.</inlineHelpText>
+        <label>Matcher Rule</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Platform Event Consumer</label>
+    <pluralLabel>Platform Event Consumers</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

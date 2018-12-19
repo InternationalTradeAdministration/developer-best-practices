@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Order__c</fullName>
+        <description>The hierarchical order of SObjects.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The hierarchical order of SObjects.</inlineHelpText>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SObjectType__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Specifies the SObject Type support by the unit of work.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Specifies the SObject Type support by the unit of work.</inlineHelpText>
+        <label>SObject Type</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Application Factory - Unit of Work</label>
+    <pluralLabel>Application Factory - Units of Work</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
