@@ -54,6 +54,14 @@ update accountList;
     - System, ex: System.debug(...)
     - Database, ex: Database.update(...)
     - Trigger, ex: Trigger.new and Trigger.newMap
+  - Do not capitalize the following words: `if`, `for`, `while`, etc.
+  - When using a field, match the exact API capitalization of the field in Salesforce
+  - Put your curly braces on the same line as your function definition, if/while/for/etc loops, etc., Ex:
+```java
+public void method () { // do this
+{ // rather than this
+}
+```
 
 ## What is this?
 
