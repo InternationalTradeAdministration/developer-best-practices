@@ -58,9 +58,6 @@ update accountList;
   - Whatever best practices are decided need to be proliferated through all new code and when possible to our old code
   - This helps with readability and quality control
 
-- Never commit commented, obsolete code **in a final commit -- this branch is done and ready for merge.**  Retaining commented code during development is acceptable for reference or convenience, but purge it before a final commit.
-  - Commenting out code goes against the very reason version control exists; it will still be available by looking at the history
-
 - Prefixes before class names are sometimes a good thing
   - Usually only in environments where multiple separate feature projects are working in the same code base
   - Prefixes also allow for developers to scroll directly to the classes their project has implemented
