@@ -41,7 +41,7 @@ update accountList;
 - Never commit commented or obsolete code in your final commit. Retaining commented code during development is acceptable for reference or convenience, but delete it before a final commit and pull request.
   - Commenting out code goes against the reason version control exists; it will still be available by looking at the history.
 
-  Format your code using these rules:
+- Format your code using these rules:
   - Always use a *space* after a comma, Ex: [SELECT Id, Some_field__c, ...]
   - Always capitalize the following words:
     - SELECT
