@@ -41,6 +41,12 @@ update accountList;
 - Never commit commented or obsolete code in your final commit. Retaining commented code during development is acceptable for reference or convenience, but delete it before a final commit and pull request.
   - Commenting out code goes against the reason version control exists; it will still be available by looking at the history.
 
+- Test methods should follow this format: testMethodThatYouAreTesting_StateBeforeTestAndWhatIsBeingSetup_ExpectedResult
+  - Without any knowledge of the class it is testing and without any knowledge of the business logic involved, you can look at the below name and know exactly what to expect:
+    - `testCreateNewContact_AccountExistsBeforeCreationAndIsAssigned_ContactCreatedSuccessfull()` and `testCreateNewContact_AccountDoesNotExist_NoContactCreatedExceptionThrown()` vs. `testCreateNewContac1t()` and `testCreateNewContact2()`
+  - The difference between these two is that in the longer method name you know which one is supposed to succeed and which one is to fail. You also know that the success and failure is based on having an account already created.
+  - Long test names look ugly, but I promise you’ll get to love them when revisiting old code or tackling coverage of a class you’ve never seen before
+
 ## What is this?
 
 - A repo dedicated to voting on standards that will be encouraged and (in some cases) enforced on new code and old code (when the opportunity arises).
@@ -84,12 +90,6 @@ vs.
 
 - Keep comments updated
   - If a comment above a regex says ‘// grab only alphanumeric characters’ and then you change the regex to include or exclude other characters then you need to update the comment so that future readers are not surprised, confused, or mislead
-
-- Test methods should follow this format: testMethodThatYouAreTesting_StateBeforeTestAndWhatIsBeingSetup_ExpectedResult
-  - Without any knowledge of the class it is testing and without any knowledge of the business logic involved, you can look at the below name and know exactly what to expect:
-    - `testCreateNewContact_AccountExistsBeforeCreationAndIsAssigned_ContactCreatedSuccessfull()` and `testCreateNewContact_AccountDoesNotExist_NoContactCreatedExceptionThrown()` vs. `testCreateNewContac1t()` and `testCreateNewContact2()`
-  - The difference between these two is that in the longer method name you know which one is supposed to succeed and which one is to fail. You also know that the success and failure is based on having an account already created.
-  - Long test names look ugly, but I promise you’ll get to love them when revisiting old code or tackling coverage of a class you’ve never seen before
 
 - Test methods MUST test something! They should not be there to simply provide code coverage. Everyone hates doing code coverage and test classes but I’ve found countless bugs in my code just from going through this practice
 
